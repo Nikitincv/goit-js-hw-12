@@ -4,15 +4,217 @@
   | default @import url()
   |============================
 */
-/* Common styles */
 @import url('./reset.css');
-@import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
-
-/* Sections style */
-@import url('./header.css');
 @import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+@import url('./header.css');
+
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color: #242424;
+  background-color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+.loader {
+  transform: rotateZ(45deg);
+  perspective: 1000px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  color: #fff;
+}
+  .loader:before,
+  .loader:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    transform: rotateX(70deg);
+    animation: 1s spin linear infinite;
+  }
+  .loader:after {
+    color: #FF3D00;
+    transform: rotateY(70deg);
+    animation-delay: .4s;
+  }
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+
+@keyframes rotateccw {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    box-shadow: .2em 0px 0 0px currentcolor;
+  }
+  12% {
+    box-shadow: .2em .2em 0 0 currentcolor;
+  }
+  25% {
+    box-shadow: 0 .2em 0 0px currentcolor;
+  }
+  37% {
+    box-shadow: -.2em .2em 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: -.2em 0 0 0 currentcolor;
+  }
+  62% {
+    box-shadow: -.2em -.2em 0 0 currentcolor;
+  }
+  75% {
+    box-shadow: 0px -.2em 0 0 currentcolor;
+  }
+  87% {
+    box-shadow: .2em -.2em 0 0 currentcolor;
+  }
+}
+
+.isheaden {
+  display: none;
+}
+
+.search-form {
+  width: 371px;
+height: 40px;
+margin: 0 auto;
+margin-top: 36px;
+}
+.search-input {
+  border-radius: 4px;
+
+  /* padding-left: 16px; */
+  width: 272px;
+  height: 40px;
+  background-color: #fff;
+}
+.search-button {
+  border-radius: 8px;
+padding: 8px 16px;
+width: 91px;
+height: 40px;
+background-color: #4e75ff;
+border: none;
+color: #fff;
+font-family: "Montserrat", sans-serif;
+font-weight: 500;
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.04em;
+transition-property: background-color;
+transition-duration: 250ms;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search-button:hover {
+  background-color: #6c8cff;;
+}
+
+/* .gallery {
+  padding-top: 32px;
+width: 360px;
+  height: 200px;
+margin: 0 auto;
+display: flex;
+flex-direction: row;
+justify-content: center;
+gap: 24px;
+
+
+
+} */
+
+.gallery {
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.gallery-item {
+  max-width: 360px;
+  border: 1px solid #808080;
+  border-radius: 6px;
+  background-color: #fff;
+  overflow: hidden;
+  transition: box-shadow 0.5s ease;
+}
+
+.gallery-item:hover,
+.gallery-item:focus {
+  box-shadow: 0px 0px 9px 1px #000000;
+}
+
+.gallery-img {
+  width: 360px;
+  height: 152px;
+  object-fit: cover;
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card-info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+}
+
+.load-more {
+  border-radius: 8px;
+padding: 8px 16px;
+
+height: 40px;
+background-color: #4e75ff;
+border: none;
+color: #fff;
+font-family: "Montserrat", sans-serif;
+font-weight: 500;
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.04em;
+margin-top: 20px;
+margin-left: 10px;
+margin-bottom: 15px;
+transition-property: background-color;
+transition-duration: 250ms;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.load-more:hover {
+  background-color: #6c8cff;;
+}
